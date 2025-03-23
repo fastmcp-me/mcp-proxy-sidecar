@@ -1,0 +1,39 @@
+{
+  "name": "mcp-proxy-sidecar",
+  "version": "1.0.0",
+  "description": "A fork of JetBrains MCP Server that adds real-time WebSocket monitoring of all MCP interactions",
+  "main": "dist/src/index.js",
+  "type": "module",
+  "author": {
+    "name": "Daniel Ortega",
+    "email": "danielortegaufano@gmail.com",
+    "url": "https://github.com/dortegau"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dortegau/mcp-proxy-sidecar.git"
+  },
+  "bin": {
+    "mcp-proxy-sidecar": "dist/src/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && shx chmod +x dist/src/*.js",
+    "prepare": "npm run build",
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.1.0",
+    "node-fetch": "^3.3.2",
+    "ws": "^8.15.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/ws": "^8.5.10",
+    "shx": "^0.3.4",
+    "typescript": "^5.3.3"
+  }
+}
